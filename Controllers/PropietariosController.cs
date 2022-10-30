@@ -234,12 +234,12 @@ public class PropietariosController : ControllerBase
 				var message = new MimeKit.MimeMessage();
 				message.To.Add(new MailboxAddress(perfil.Nombre, perfil.Email));
 				message.From.Add(new MailboxAddress(perfil.Nombre, perfil.Email));
-				//message.From.Add(new MailboxAddress("Sistema", "mailto:ulp.api.net@gmail.com"));
-				message.Subject = "Prueba de Correo desde API";
+	
+				message.Subject = "Nueva Password para la Aplicación de la Inmobiliaria Pestchanker";
 				message.Body = new TextPart("html")
 				{
 					Text = @$"<h1>Hola</h1>
-					<p>¡Bienvenido, {perfil.Nombre} Clave {nuevaClaveSin}</p>",//falta enviar la clave generar (sin hashear)
+					<p>¡Bienvenido, {perfil.Nombre} Clave {nuevaClaveSin}</p>",//Envio
 				};
 				message.Headers.Add("Encabezado", "Valor");//solo si hace falta
 				MailKit.Net.Smtp.SmtpClient client = new SmtpClient();
@@ -251,7 +251,7 @@ public class PropietariosController : ControllerBase
 				client.Authenticate(config["SMTPUser"], config["SMTPPass"]);//estas credenciales deben estar en el user secrets
 				//client.Authenticate("ulp.api.net@gmail.com", "ktitieuikmuzcuup");
 				await client.SendAsync(message);
-				return Ok(perfil);
+				return Ok("Su Password fue restaurada.");
 			}
 			catch (Exception ex)
 			{
