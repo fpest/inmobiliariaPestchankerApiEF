@@ -1,0 +1,51 @@
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 6.0.10
+
+
+https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer/6.0.10
+
+
+https://www.nuget.org/packages/MailKit/
+
+dotnet add package MailKit --version 3.4.1
+
+Mail
+ulp.api.net@gmail.com
+ktitieuikmuzcuup
+smtp.gmail.com
+465
+
+
+dotnet user-secrets init
+https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-6.0&tabs=windows
+
+dotnet user-secrets set "Movies:ServiceApiKey" "12345"
+
+https://github.com/marianoluzza/inmobiliariaULP
+
+
+
+dotnet user-secrets list
+
+dotnet user-secrets remove "Movies:ConnectionString"
+
+
+
+         //contexto.Contrato.Include(i => i.Inmueble).Include(inq => inq.Inquilino)
+            //.Where(c => c.Inmueble.Propietario.Email == usuario && 
+            //c.Fecha_Desde <= DateTime.Today.Date && c.Fecha_Hasta >= DateTime.Today.Date).ToList()
+
+			//var i = context.Contrato.Include(x => x.Inmueble).             
+            //    Where(x => x.Inmueble.PropietarioId == id);
+
+
+/*
+            var i = context.Contrato.Include(i => i.Inmueble)
+                        .ThenInclude(p => p.Propietario)
+                        .Where(p => p.Inmueble.PropietarioId == id);
+                        
+  */                      
+                        
+                        
+                        //.Email == usuario && 
+                        //c.Fecha_Desde <= DateTime.Today.Date && c.Fecha_Hasta >= DateTime.Today.Date).ToList()
+
